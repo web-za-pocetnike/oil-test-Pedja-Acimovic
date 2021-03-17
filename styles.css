@@ -1,0 +1,411 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: rgba(225, 245, 189, 0.5);
+  z-index: -1;
+}
+a {
+  text-decoration: none;
+}
+
+.hero {
+  height: 100vh;
+  width: 100%;
+}
+
+.navbar {
+  background-color: rgba(199, 214, 163, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  height: 6rem;
+  position: absolute;
+  z-index: 10000;
+  width: 100%;
+}
+
+.logo img {
+  width: 10rem;
+  margin-left: 5%;
+}
+.hamburger {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  right: 5%;
+  top: 3%;
+  /* transform: translate(-5%, -50%); */
+  cursor: pointer;
+}
+
+.line {
+  width: 50px;
+  height: 6px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(94, 126, 44);
+  transition: 0.5s;
+}
+.line:before {
+  content: "";
+  width: 50px;
+  height: 6px;
+  background-color: rgb(94, 126, 44);
+  position: absolute;
+  transform: translateY(-16px);
+  transition: 0.5s;
+}
+.line:after {
+  content: "";
+  width: 50px;
+  height: 6px;
+  background-color: rgb(94, 126, 44);
+  position: absolute;
+  transform: translateY(16px);
+  transition: 0.5s;
+}
+
+.hamburger.active .line {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.hamburger.active .line:before {
+  transform: rotate(45deg);
+}
+.hamburger.active .line:after {
+  transform: rotate(135deg);
+}
+
+.hero-text.hide {
+  transform: rotateX(90deg);
+  transition: 0.2s ease;
+}
+.hero-img {
+  max-height: 100%;
+  width: 100%;
+  transition: 0.5s ease;
+}
+
+.hero-image img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 2s ease;
+}
+
+.menu {
+  position: fixed;
+  padding-top: 10%;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  /* z-index: 100; */
+  z-index: -1;
+}
+
+.menu-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* position: absolute; */
+  font-size: 2.5rem;
+  letter-spacing: 7px;
+  text-transform: uppercase;
+  width: 50%;
+  height: 20%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  z-index: 1000;
+  text-decoration: none;
+  transform: rotateX(90deg);
+  transition: 0.5s ease;
+  pointer-events: none;
+}
+.menu.active {
+  z-index: 9999;
+}
+
+.active .menu-tab {
+  transform: rotateX(0deg);
+  pointer-events: all;
+  transition-delay: 0.5s;
+}
+
+.hero-text {
+  position: absolute;
+  top: 70%;
+  left: 45%;
+  /* height:25%; */
+  width: 50%;
+  display: flex;
+  align-items: center;
+  background-color: rgba(74, 82, 55, 0.3);
+  font-size: 2rem;
+  color: rgb(175, 187, 140);
+  z-index: 2000;
+  transition: 0.5s ease;
+  transition-delay: 0.5s;
+}
+
+.buttons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prev-btn,
+.next-btn {
+  margin: 0 0.5rem;
+  z-index: 10001;
+  outline: none;
+  /* border: none; */
+  background: none;
+  cursor: pointer;
+}
+
+/* Product styles */
+
+.divide-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgb(94, 126, 44);
+  background-image: radial-gradient(
+    circle,
+    rgb(94, 136, 60),
+    rgb(243, 248, 243)
+  );
+  margin: 5rem 0;
+}
+.product-section {
+  display: flex;
+  /* background-color: greenyellow; */
+  height: 60vh;
+  width: 100%;
+}
+
+/* Product selection image and button style*/
+.product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: indianred; */
+  height: 100%;
+  width: 50%;
+}
+
+.butons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: lawngreen; */
+  height: 100%;
+  width: 100%;
+}
+
+.img-container {
+  width: 100%;
+  height: 100%;
+}
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3%;
+  box-shadow: 5px 5px 10px rgb(65, 82, 47);
+}
+
+.product-prev-btn,
+.product-next-btn {
+  margin: 0 0.5rem;
+  z-index: 9998;
+  outline: none;
+  /* border: none; */
+  background: none;
+  cursor: pointer;
+}
+
+/* Product selection text description style */
+
+.product-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: khaki; */
+  height: 100%;
+  width: 50%;
+}
+.product-title {
+  text-transform: uppercase;
+  color: rgb(78, 104, 51);
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+.product-text {
+  /* background-color: lawngreen; */
+  height: 90%;
+  width: 90%;
+  color: rgb(78, 104, 51);
+  text-align: justify;
+}
+
+.product-txt {
+  padding: 0 2rem;
+}
+
+/* Certification section styles */
+
+.certification-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: greenyellow; */
+  height: 70vh;
+  width: 100%;
+}
+
+.certification-card {
+  position: relative;
+  height: 100%;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  border-radius: 3%;
+  box-shadow: 5px 5px 10px rgb(65, 82, 47);
+}
+
+.certification-title {
+  padding: 0.5rem 0;
+  color: rgb(78, 104, 51);
+}
+
+.certification-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: auto;
+}
+
+.certification-img img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 3%;
+  box-shadow: 5px 5px 10px rgb(65, 82, 47);
+}
+
+.certification-text {
+  padding: 1rem;
+  text-align: center;
+  color: rgb(78, 104, 51);
+}
+
+.certification-btn {
+  position: absolute;
+  bottom: 5%;
+  width: 10rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  box-shadow: 3px 3px 7px rgba(65, 82, 47, 0.7);
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: rgb(122, 141, 88);
+  color: rgb(224, 240, 166);
+  /* z-index: 10002; */
+  z-index: 9998;
+}
+.certification-btn:hover {
+  background-color: rgb(224, 240, 166);
+  color: rgb(122, 141, 88);
+}
+
+/* form section styles */
+
+.contact-section {
+  background: url(plantation-4454758_1920.jpg) no-repeat center;
+  background-size: cover;
+  padding: 40px 0;
+}
+.contact-section h1 {
+  text-align: center;
+  color: rgb(104, 128, 81);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  padding: 0 10px;
+  overflow: hidden;
+}
+
+.contact-form-text {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 16px 0;
+  border: 0;
+  background: rgb(127, 139, 84, 0.7);
+  padding: 20px 40px;
+  outline: none;
+  color: rgb(224, 240, 166);
+  transition: 0.5s;
+}
+
+.contact-form-text:focus {
+  box-shadow: 0 0 10px 4px #769145;
+}
+textarea.contact-form-text {
+  resize: none;
+  height: 120px;
+}
+.contact-form-btn {
+  width: 10rem;
+  height: 1.5rem;
+  float: right;
+  outline: none;
+  border: none;
+  background-color: rgb(122, 141, 88);
+  box-shadow: 3px 3px 7px rgba(65, 82, 47, 0.7);
+  color: rgb(224, 240, 166);
+  /* padding: 12px 50px; */
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.contact-form-btn:hover {
+  background-color: rgb(224, 240, 166);
+  color: rgb(122, 141, 88);
+}
+
+::placeholder {
+  color: rgb(224, 240, 166);
+}
+
+/* Footer section styles */
+
+.footer-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 6rem;
+  margin: 0 0.2rem;
+  background: rgba(199, 214, 163, 0.7);
+}
